@@ -12,12 +12,27 @@ export class PChatComponent implements OnInit {
     {
       trigger: 'sessionStart',
       response: 'Hello, i am a AnBot, please select an option',
-      options: ['1', '2', '3'],
+      options: ['1', '2', '3', 'Restart'],
     },
     {
       trigger: '1',
       response: 'You selected option 1',
-      options: ['2', '3'],
+      options: ['2', '3', 'Restart'],
+    },
+    {
+      trigger: '2',
+      response: 'You selected option 2',
+      options: ['1', '3', 'Restart'],
+    },
+    {
+      trigger: '3',
+      response: 'You selected option 3',
+      options: ['1', '2', 'Restart'],
+    },
+    {
+      trigger: 'Restart',
+      response: 'Hello, i am a AnBot, please select an option',
+      options: ['1', '2', '3'],
     },
   ];
 

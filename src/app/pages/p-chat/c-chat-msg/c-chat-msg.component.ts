@@ -17,7 +17,7 @@ export class CChatMsgComponent implements OnInit {
   sendOption(opcion: string) {
     this.eventOptionSelected.emit(opcion);
     setTimeout(() => {
-      this.message.opciones = [];
+      this.message.options = [];
     }, 500);
   }
 

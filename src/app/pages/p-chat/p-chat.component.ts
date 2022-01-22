@@ -3,13 +3,50 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-p-chat',
   templateUrl: './p-chat.component.html',
-  styleUrls: ['./p-chat.component.css']
+  styleUrls: ['./p-chat.component.css'],
 })
 export class PChatComponent implements OnInit {
+  public session = [];
+  public writing = false;
+  public messages = [
+    {
+      trigger: 'sessionStart',
+      response: 'Hello, i am a AnBot, please select an option',
+      options: ['1', '2', '3'],
+    },
+    {
+      trigger: '1',
+      response: 'You selected option 1',
+      options: ['2', '3'],
+    },
+  ];
 
-  constructor() { }
+  constructor() {}
 
   ngOnInit() {
+    this.session.push(
+      this.formartMsjSession('bot', this.getNextMsg('sessionStart'))
+    );
   }
 
+  getNextMsg(trigger: string) {
+    let msj = this.messages.find((msj) => msj.trigger == trigger);
+    return msj;
+  }
+
+  onOpcionSeleccionada(opcion: string) {
+    this.writing = true;
+    setTimeout(() => {
+      this.session.push(this.formartMsjSession('user', { respuesta: opcion }));
+      this.session.push(this.formartMsjSession('bot', this.getNextMsg(opcion)));
+      this.writing = false;
+    }, 1800);
+  }
+
+  formartMsjSession(autor, msg) {
+    return {
+      autor,
+      ...msg,
+    };
+  }
 }

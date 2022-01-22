@@ -12,7 +12,7 @@ export class PChatComponent implements OnInit {
     {
       trigger: 'sessionStart',
       response: 'Hello, i am a AnBot, please select an option',
-      options: ['1', '2', '3', 'Restart'],
+      options: ['1', '2', '3'],
     },
     {
       trigger: '1',
@@ -46,6 +46,12 @@ export class PChatComponent implements OnInit {
 
   getNextMsg(trigger: string) {
     let msj = this.messages.find((msj) => msj.trigger == trigger);
+    if (msj.trigger == 'Restart') {
+      this.session = [];
+      this.session.push(
+        this.formartMsjSession('bot', this.getNextMsg('sessionStart'))
+      );
+    }
     return msj;
   }
 

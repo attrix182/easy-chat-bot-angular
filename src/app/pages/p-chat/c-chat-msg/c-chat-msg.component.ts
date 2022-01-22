@@ -22,7 +22,7 @@ export class CChatMsgComponent implements OnInit {
   }
 
   getClasses() {
-    if (this.message.actor == 'bot') {
+    if (this.message.autor == 'bot') {
       return 'd-flex flex-row justify-content-start chat-bot';
     }
     return 'd-flex flex-row justify-content-end chat-user';

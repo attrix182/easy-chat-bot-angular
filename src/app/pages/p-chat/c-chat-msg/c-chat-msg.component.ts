@@ -1,7 +1,7 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 @Component({
-  selector: 'app-c-chat-msg',
+  selector: 'c-chat-msg',
   templateUrl: './c-chat-msg.component.html',
   styleUrls: ['./c-chat-msg.component.css'],
 })

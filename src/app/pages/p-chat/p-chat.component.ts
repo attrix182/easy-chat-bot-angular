@@ -34,11 +34,11 @@ export class PChatComponent implements OnInit {
     return msj;
   }
 
-  onOpcionSeleccionada(opcion: string) {
+  onOptionSelected(option: any) {
     this.writing = true;
     setTimeout(() => {
-      this.session.push(this.formartMsjSession('user', { respuesta: opcion }));
-      this.session.push(this.formartMsjSession('bot', this.getNextMsg(opcion)));
+      this.session.push(this.formartMsjSession('user', { response: option }));
+      this.session.push(this.formartMsjSession('bot', this.getNextMsg(option)));
       this.writing = false;
     }, 1800);
   }

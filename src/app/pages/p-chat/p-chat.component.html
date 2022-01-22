@@ -1,8 +1,8 @@
 <div *ngFor="let msg of session">
-<c-chat-msg [mensaje]="msg" (eventOpcionSeleccionada)="onOptionSelected($event)"></c-chat-msg>
+  <c-chat-msg
+    [message]="msg"
+    (eventOptionSelected)="onOptionSelected($event)"
+  ></c-chat-msg>
 </div>
 
-
-<div class="msg-escribiendo" *ngIf="escribiendo">Escribiendo...</div>
-</div>
-
+<div class="msg-escribiendo" *ngIf="writing">Escribiendo...</div>

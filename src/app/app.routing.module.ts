@@ -5,7 +5,7 @@ import { PChatComponent } from './pages/p-chat/p-chat.component';
 const routes: Routes = [{ path: '', component: PChatComponent }];
 
 @NgModule({
-  imports: [RouterModule.forChild(routes)],
+  imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],
 })
-export class appRoutingModule {}
+export class AppRoutingModule {}

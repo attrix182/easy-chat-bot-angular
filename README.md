@@ -2,7 +2,7 @@
 
 [Editar en StackBlitz ⚡️](https://stackblitz.com/edit/easychatbot?file=src/app/pages/p-chat/p-chat.component.ts)
 
-[Probar en StackBlitz ⚡️](easychatbot.stackblitz.io)
+[Probar en StackBlitz ⚡️](https://easychatbot.stackblitz.io)
 
 Chat bot simple, realizado en Angular utilizando estilos de Bootstrap
 
